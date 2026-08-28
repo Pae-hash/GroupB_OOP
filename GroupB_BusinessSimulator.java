@@ -77,3 +77,64 @@ public class GroupB_BusinessSimulator {
             1000.00,
             2500.00
         };
+// --------------------------------
+        // 2. DISPLAY PRICE LIST
+        // --------------------------------
+
+        System.out.println("==== KAMPALA CORNER CAFE ====");
+
+        for (int i = 0; i < items.length; i++) {
+            System.out.printf(
+                "%d. %-16s UGX %.2f%n",
+                i + 1,
+                items[i],
+                prices[i]
+            );
+        }
+
+        // --------------------------------
+        // 3. QUANTITIES PURCHASED  ("check yourself" example: total = UGX 50,000.00)
+        // --------------------------------
+
+        int[] quantities = {
+            3,   // Rice (plate)
+            2,   // Chicken (piece)
+            2,   // Chapati
+            6    // Soda
+        };
+
+        // --------------------------------
+        // DISCOUNT RULES (per item, since each rule is different)
+        // threshold        : minimum quantity for the discount to kick in
+        // discountValue    : 0.05 = 5%, 500.0 = flat UGX 500, etc.
+        // isPercentage     : true = % off the item's total, false = flat UGX off
+        // neverDiscounted  : true overrides everything else (Chicken)
+        // --------------------------------
+
+        int[] thresholds = {
+            4,                  // Rice: 4+ plates
+            Integer.MAX_VALUE,  // Chicken: unreachable threshold, never discounted
+            3,                  // Chapati: 3+
+            6                   // Soda: 6+
+        };
+
+        double[] discountValues = {
+            0.05,   // Rice: 5% off rice total
+            0.0,    // Chicken: n/a
+            500.0,  // Chapati: flat UGX 500 off chapati total
+            0.10    // Soda: 10% off soda total
+        };
+
+        boolean[] isPercentage = {
+            true,   // Rice
+            false,  // Chicken (unused)
+            false,  // Chapati (flat amount)
+            true    // Soda
+        };
+
+        boolean[] neverDiscounted = {
+            false,  // Rice
+            true,   // Chicken
+            false,  // Chapati
+            false   // Soda
+        };
