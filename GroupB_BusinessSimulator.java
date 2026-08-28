@@ -138,3 +138,41 @@ public class GroupB_BusinessSimulator {
             false,  // Chapati
             false   // Soda
         };
+     // --------------------------------
+        // 4. CALCULATE SUBTOTALS + NOTES
+        // --------------------------------
+
+        double[] subtotals = new double[items.length];
+        String[] notes = new String[items.length];
+
+        for (int i = 0; i < items.length; i++) {
+
+            subtotals[i] = calculateSubtotal(
+                prices[i],
+                quantities[i],
+                thresholds[i],
+                discountValues[i],
+                isPercentage[i]
+            );
+
+            notes[i] = buildNote(
+                quantities[i],
+                thresholds[i],
+                neverDiscounted[i],
+                isPercentage[i],
+                discountValues[i]
+            );
+        }
+
+        // --------------------------------
+        // 5 & 6. PRINT RECEIPT
+        // --------------------------------
+
+        printReceipt(
+            items,
+            quantities,
+            subtotals,
+            notes
+        );
+    }
+}
