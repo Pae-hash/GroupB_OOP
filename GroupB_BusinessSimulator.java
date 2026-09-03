@@ -61,7 +61,7 @@ public class GroupB_BusinessSimulator {
     public static void main(String[] args) {
 
         // --------------------------------
-        // 1. STORE ITEMS AND PRICES  (Group B - Kampala Corner Cafe)
+        // STORE ITEMS AND PRICES 
         // --------------------------------
 
         String[] items = {
@@ -77,8 +77,8 @@ public class GroupB_BusinessSimulator {
             1000.00,
             2500.00
         };
-// --------------------------------
-        // 2. DISPLAY PRICE LIST
+        // --------------------------------
+        // DISPLAY PRICE LIST
         // --------------------------------
 
         System.out.println("==== KAMPALA CORNER CAFE ====");
@@ -93,12 +93,12 @@ public class GroupB_BusinessSimulator {
         }
 
         // --------------------------------
-        // 3. QUANTITIES PURCHASED  ("check yourself" example: total = UGX 50,000.00)
+        // QUANTITIES PURCHASED  
         // --------------------------------
 
         int[] quantities = {
-            3,   // Rice (plate)
-            2,   // Chicken (piece)
+            3,   // Rice 
+            2,   // Chicken
             2,   // Chapati
             6    // Soda
         };
@@ -139,7 +139,7 @@ public class GroupB_BusinessSimulator {
             false   // Soda
         };
      // --------------------------------
-        // 4. CALCULATE SUBTOTALS + NOTES
+        // CALCULATE SUBTOTALS + NOTES
         // --------------------------------
 
         double[] subtotals = new double[items.length];
@@ -165,7 +165,7 @@ public class GroupB_BusinessSimulator {
         }
 
         // --------------------------------
-        // 5 & 6. PRINT RECEIPT
+        // PRINT RECEIPT
         // --------------------------------
 
         printReceipt(
