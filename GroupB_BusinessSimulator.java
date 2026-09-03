@@ -5,7 +5,7 @@ public class GroupB_BusinessSimulator {
     public static double calculateSubtotal(double price, int quantity,
                                             int threshold, double discountValue,
                                             boolean isPercentage) {
-        double subtotal = price * quantity;
+        double subtotal = price*quantity;
 
         if (quantity >= threshold) {
             if (isPercentage) {
